@@ -1,10 +1,12 @@
 package negocio;
 
+import java.util.List;
+
 public class Cadastro {
-	public String[] nomes;
-	public int[] anos;
-	public float[] mensalidades;
-	public boolean[] bolsas;
+	private List<String> nomes;
+	private List<Integer> anos;
+	private List<Float> mensalidades;
+	private List<Boolean> bolsas;
 
 	public void obterNomesAlunos(){
 		System.out.println("# Quais os nomes dos alunos?");
@@ -59,13 +61,13 @@ public class Cadastro {
 		int maiorIdade = 0;
 		int idade = 0;
 		
-		for (int i = 0; i < nomes.length; i++) {
+		for (int i = 0; i < nomes.size(); i++) {
 			
-			idade = this.obterIdade(anos[i]);
+			idade = this.obterIdade(anos.get(i));
 			
 			if(idade >= maiorIdade){
 				maiorIdade = idade;
-				alunoMaisVelho = nomes[i];
+				alunoMaisVelho = nomes.get(i);
 			}
 		}
 		
@@ -78,11 +80,11 @@ public class Cadastro {
 		String alunoPagaMais = null;
 		float maiorMensalidade = 0;
 		
-		for (int i = 0; i < nomes.length; i++) {
+		for (int i = 0; i < nomes.size(); i++) {
 			
-			if(mensalidades[i] >= maiorMensalidade){
-				maiorMensalidade = mensalidades[i];
-				alunoPagaMais = nomes[i];
+			if(mensalidades.get(i) >= maiorMensalidade){
+				maiorMensalidade = mensalidades.get(i);
+				alunoPagaMais = nomes.get(i);
 			}
 		}
 		
@@ -92,7 +94,7 @@ public class Cadastro {
 	public void obterQtdeAlunos(){
 		System.out.println("# Temos quantos alunos?");
 		
-		System.out.println(this.nomes.length);
+		System.out.println(this.nomes.size());
 	}
 	
 	public void obterMediaIdade(){
@@ -104,7 +106,7 @@ public class Cadastro {
 			somaIdade = somaIdade + this.obterIdade(ano);
 		}
 		
-		System.out.println(somaIdade / this.anos.length);
+		System.out.println(somaIdade / this.anos.size());
 	}
 	
 	public void existeAlunoZezinho(){
@@ -133,6 +135,31 @@ public class Cadastro {
 			somaMensalidade = somaMensalidade + valor;
 		}
 		
-		System.out.println(somaMensalidade / this.mensalidades.length);
+		System.out.println(somaMensalidade / this.mensalidades.size());
 	}
+
+	public List<String> getNomes() {
+		return nomes;
+	}
+	public void setNomes(List<String> nomes) {
+		this.nomes = nomes;
+	}
+	public List<Integer> getAnos() {
+		return anos;
+	}
+	public void setAnos(List<Integer> anos) {
+		this.anos = anos;
+	}
+	public List<Float> getMensalidades() {
+		return mensalidades;
+	}
+	public void setMensalidades(List<Float> mensalidades) {
+		this.mensalidades = mensalidades;
+	}
+	public List<Boolean> getBolsas() {
+		return bolsas;
+	}
+	public void setBolsas(List<Boolean> bolsas) {
+		this.bolsas = bolsas;
+	}	
 }

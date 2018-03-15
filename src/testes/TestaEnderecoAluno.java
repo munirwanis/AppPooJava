@@ -6,20 +6,22 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 import negocio.Aluno;
+import negocio.Endereco;
 import negocio.GestaoAcademica;
 
-//http://dontpad.com/apppoojava
-
-public class TestaColecaoAlunos {
+public class TestaEnderecoAluno {
 
 	public static void main(String[] args) {
 		int qtde = Integer.valueOf(args.length > 0 ? args[0] : "1");
 		
-		List<Aluno> alunos = new ArrayList<Aluno>();
+		List<Aluno> listagemAluno = new ArrayList<Aluno>();
 		
 		String nome = null;
 		int anoNascimento = 0;
 		float mensalidade = 0;
+		String bairro = null;
+		String cidade = null;
+		String uf = null;
 		
 		Aluno devedor = new Aluno("gilmar", 1955);
 		
@@ -27,14 +29,20 @@ public class TestaColecaoAlunos {
 			
 			nome = JOptionPane.showInputDialog("Informe o nome do aluno: ");
 			anoNascimento = Integer.valueOf(JOptionPane.showInputDialog("Informe o ano de nascimento do aluno: "));
-			mensalidade = Float.valueOf(JOptionPane.showInputDialog("Informe a mensalidade do aluno: "));
+			mensalidade = Float.valueOf(JOptionPane.showInputDialog("Informe a mensalidade do aluno: "));			
 			
-			alunos.add(new Aluno(nome, anoNascimento, mensalidade));
+			bairro = JOptionPane.showInputDialog("Informe o bairro do aluno: ");
+			cidade = JOptionPane.showInputDialog("Informe a cidade do aluno: ");
+			uf = JOptionPane.showInputDialog("Informe a UF do aluno: ");
+			
+			Endereco endereco = new Endereco(bairro, cidade, uf);
+			
+			listagemAluno.add(new Aluno(nome, anoNascimento, mensalidade, endereco));
 		}
 		
 		GestaoAcademica gestao = new GestaoAcademica();
-		gestao.setAlunos(alunos);
+		gestao.setAlunos(listagemAluno);
 		gestao.setAlunoDevedor(devedor);
 		gestao.exibir();
-	}
+	}	
 }

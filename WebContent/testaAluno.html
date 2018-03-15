@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Testa Aluno</title>
+</head>
+<body>
+
+	<form action="AlunoController" method="get">
+		<input type="submit" value="Exibir">
+		<hr>
+
+		<h3>Nome</h3>		
+		<input type="text" name="nome">
+		
+		<h3>AnoNascimento</h3>
+		<input type="text" name="anoNascimento">
+				
+		<h3>Mensalidade</h3>
+		<input type="text" name="mensalidade">	
+		
+		<h3>Bolsista</h3>		
+		<select name="bolsista">
+			<option value="S">Sim</option>
+			<option value="N">Não</option>
+		</select>
+
+		<hr>
+		
+		<h3>Apresentação</h3>
+		<input type="checkbox" value="S" name="impressao"> Imprimir o relatório na tela?
+	</form>
+
+</body>
+</html>

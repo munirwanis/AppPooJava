@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Testa Universidade</title>
+</head>
+<body>
+
+	<form action="UniversidadeController" method="get">
+		<input type="submit" value="Exibir">
+		<hr>
+
+		<fieldset>
+			<legend>Universidade</legend>
+
+	  		<h3>Bairro</h3>		
+			<input type="text" name="bairroUniversidade">
+			
+			<h3>Cidade</h3>		
+			<input type="text" name="cidadeUniversidade">
+	
+			<h3>UF</h3>		
+			<select name="ufUniversidade">
+				<option>RJ</option>
+				<option>SP</option>
+				<option>MG</option>
+				<option>ES</option>
+			</select>
+			
+			<h3>Razão Social</h3>		
+			<input type="text" name="razaoSocial">
+	
+			<h3>E-mail</h3>		
+			<input type="text" name="email">
+	
+			<h3>Whatsapp</h3>		
+			<input type="text" name="whatsapp">
+			
+		</fieldset>		
+			
+		<fieldset>
+			<legend>Aluno</legend>
+
+			<h3>Bairro</h3>		
+			<input type="text" name="bairroAluno">
+			
+			<h3>Cidade</h3>		
+			<input type="text" name="cidadeAluno">
+	
+			<h3>UF</h3>		
+			<select name="ufAluno">
+				<option>RJ</option>
+				<option>SP</option>
+				<option>MG</option>
+				<option>ES</option>
+			</select>
+			
+			<h3>Nome</h3>		
+			<input type="text" name="nome">
+	
+			<h3>Ano Nascimento</h3>		
+			<input type="text" name="anoNascimento">
+	
+			<h3>Mensalidade</h3>		
+			<input type="text" name="mensalidade">
+			
+		</fieldset>
+
+		<hr>
+		
+		<h3>Apresentação</h3>
+		<input type="checkbox" value="S" name="impressao"> Imprimir o relatório na tela?
+							
+	</form>
+
+</body>
+</html>

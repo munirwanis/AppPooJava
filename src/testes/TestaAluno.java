@@ -10,10 +10,10 @@ public class TestaAluno {
 		Aluno aluno = new Aluno();
 		
 		//preenchendo as informações
-		aluno.nome = args[0];		
-		aluno.anoNascimento = Integer.valueOf(args[1]);		
-		aluno.mensalidade = Float.valueOf(args[2]);	
-		aluno.bolsista = Boolean.valueOf(args[3]);
+		aluno.setNome(args[0]);		
+		aluno.setAnoNascimento(Integer.valueOf(args[1]));		
+		aluno.setMensalidade(Float.valueOf(args[2]));	
+		aluno.setBolsista(Boolean.valueOf(args[3]));
 		
 		//chamando o método exibir
 		aluno.exibir();		

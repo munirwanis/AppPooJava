@@ -1,23 +1,38 @@
 package testes;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import negocio.Cadastro;
 
 public class TestaAlunoCadastro {
 
 	public static void main(String[] args) {
 		String[] nomes = {"Huguinho", "Zezinho", "Luizinho"};
-		int[] anos = {1990, 2000, 2010};
-		float[] mensalidades = {600, 500, 400};
-		boolean[] bolsas = {false, false, true};
+		List<String> listaNomes = new ArrayList<String>();
+		listaNomes.addAll(Arrays.asList(nomes));
+		
+		Integer[] anos = {1990, 2000, 2010};
+		List<Integer> listaAnos = new ArrayList<Integer>();
+		listaAnos.addAll(Arrays.asList(anos));
+		
+		Float[] mensalidades = {600f, 500f, 400f};
+		List<Float> listaMensalidades = new ArrayList<Float>();
+		listaMensalidades.addAll(Arrays.asList(mensalidades));
+		
+		Boolean[] bolsas = {false, false, true};
+		List<Boolean> listaBolsas = new ArrayList<Boolean>();
+		listaBolsas.addAll(Arrays.asList(bolsas));
 		
 		// Instancie um objeto do tipo Cadastro
 		Cadastro cadastro = new Cadastro();
 		
 		// Preencha os atributos com as variáveis
-		cadastro.nomes = nomes;
-		cadastro.anos = anos;
-		cadastro.mensalidades = mensalidades;
-		cadastro.bolsas = bolsas;
+		cadastro.setNomes(listaNomes);
+		cadastro.setAnos(listaAnos);
+		cadastro.setMensalidades(listaMensalidades);
+		cadastro.setBolsas(listaBolsas);
 		
 		// Chame os dez métodos criados
 		

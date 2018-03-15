@@ -79,4 +79,14 @@
     <servlet-name>SecretariaController</servlet-name>
     <url-pattern>/SecretariaController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CorridaController</display-name>
+    <servlet-name>CorridaController</servlet-name>
+    <servlet-class>controle.CorridaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CorridaController</servlet-name>
+    <url-pattern>/CorridaController</url-pattern>
+  </servlet-mapping>
 </web-app>

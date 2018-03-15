@@ -12,7 +12,7 @@ public class TestaLeitura {
 
 	public static void main(String[] args) {
 		try {
-			FileReader filePosicao = new FileReader("posicao.corrida.txt");
+			FileReader filePosicao = new FileReader("C:\\posicao.corrida.txt");
 			BufferedReader leitorPosicao = new BufferedReader(filePosicao);
 			
 			String linhaPosicao  = null;

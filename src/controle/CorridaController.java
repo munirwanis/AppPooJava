@@ -3,6 +3,7 @@ package controle;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,35 +14,27 @@ import javax.servlet.http.HttpServletResponse;
 
 import negocio.Piloto;
 
-/**
- * Servlet implementation class CorridaController
- */
 public class CorridaController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
     public CorridaController() {
         super();
-        // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		try {
-			FileReader filePosicao = new FileReader("C:\\posicao.corrida.txt");
+			FileReader filePosicao = new FileReader("c:\\posicao.corrida.txt");
 			BufferedReader leitorPosicao = new BufferedReader(filePosicao);
 			
 			String linhaPosicao  = null;
 			String[] camposPosicao = null;
 		
 			Piloto piloto = null;
+			PrintWriter out = response.getWriter();
+			
 			while ((linhaPosicao = leitorPosicao.readLine()) != null) {
 				camposPosicao = linhaPosicao.split(";");
-				
+		
 				piloto = new Piloto();
 				piloto.setNome(camposPosicao[0]);
 				
@@ -53,20 +46,16 @@ public class CorridaController extends HttpServlet {
 				
 				piloto.setClassificacoes(posicoes);
 				
-				System.out.println(piloto.obterRelatorio() + "<br/>");
+				out.println(piloto.obterRelatorio() + "<br>");
 			}
 			
 			leitorPosicao.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
+		}		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
 
+	}
 }

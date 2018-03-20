@@ -12,7 +12,7 @@ public class TestaLeitura {
 
 	public static void main(String[] args) {
 		try {
-			FileReader filePosicao = new FileReader("C:\\posicao.corrida.txt");
+			FileReader filePosicao = new FileReader("c:\\posicao.corrida.txt");
 			BufferedReader leitorPosicao = new BufferedReader(filePosicao);
 			
 			String linhaPosicao  = null;
@@ -21,7 +21,7 @@ public class TestaLeitura {
 			Piloto piloto = null;
 			while ((linhaPosicao = leitorPosicao.readLine()) != null) {
 				camposPosicao = linhaPosicao.split(";");
-				
+		
 				piloto = new Piloto();
 				piloto.setNome(camposPosicao[0]);
 				
@@ -34,13 +34,11 @@ public class TestaLeitura {
 				piloto.setClassificacoes(posicoes);
 				
 				piloto.exibirCampos();
-				System.out.println(linhaPosicao);
 			}
 			
 			leitorPosicao.close();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}
-		
+		}		
 	}
 }

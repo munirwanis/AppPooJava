@@ -10,6 +10,15 @@ public class Disciplina {
 		System.out.println("Descrição = " + this.getDescricao());
 	}
 	
+	public Disciplina() {
+		this.setCodigo(999);
+	}
+	
+	public Disciplina(String descricao) {
+		this();
+		this.setDescricao(descricao);
+	}
+	
 	public int getCodigo() {
 		return codigo;
 	}

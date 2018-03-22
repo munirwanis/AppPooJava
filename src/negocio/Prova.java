@@ -2,6 +2,8 @@ package negocio;
 
 import java.util.List;
 
+import parametros.IConstantes;
+
 public class Prova {
 	private Disciplina disciplina;
 	private String nome;
@@ -17,19 +19,29 @@ public class Prova {
 				);
 	}
 	
-	public void exibir(){
+	public void exibir() {
 		System.out.printf("O aluno %s tem média %.2f\n",
 				this.getNome(),
 				this.calcularMedia()
 				);
-	}	
-	private float calcularMedia(){
+	}
+	
+	private float calcularMedia() {
 		float media = this.getNotaTrabalho();
-		
-		for (Float nota : this.getNotasProva()) {
-			media = media + nota;
-		}		
+		media += this.obterNotaProva();
 		return media;
+	}
+	
+	private float obterNotaProva() {
+		float soma = 0;
+		for (Float nota : this.getNotasProva()) {
+			soma += nota;
+		}
+		return soma;
+	}
+	
+	private String obterSituacao() {
+		return this.verificaAprovacao() ? "Aprovado" : "Reprovado";
 	}
 	
 	public Disciplina getDisciplina() {
@@ -55,5 +67,19 @@ public class Prova {
 	}
 	public void setNotasProva(List<Float> notasProva) {
 		this.notasProva = notasProva;
+	}
+	public boolean verificaAprovacao() {
+		return this.calcularMedia() >= IConstantes.MEDIA;
+	}
+	public String obterRelatorioIndividual() {
+		return String.format(
+				"%s;%s;%.2f;%.2f;%.2f;%s;\r\n",
+				this.getDisciplina().getDescricao(),
+				this.getNome(),
+				this.getNotaTrabalho(),
+				this.obterNotaProva(),
+				this.calcularMedia(),
+				this.obterSituacao()
+				);
 	}
 }

@@ -1,6 +1,7 @@
 package parametros;
 
 public interface IConstantes {
+	float MEDIA = 6.0f;
 	
 	int ANO_ATUAL = 2018;
 	

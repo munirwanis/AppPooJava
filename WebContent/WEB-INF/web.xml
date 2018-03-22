@@ -89,4 +89,14 @@
     <servlet-name>CorridaController</servlet-name>
     <url-pattern>/CorridaController</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ProvaController</display-name>
+    <servlet-name>ProvaController</servlet-name>
+    <servlet-class>controle.ProvaController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProvaController</servlet-name>
+    <url-pattern>/ProvaController</url-pattern>
+  </servlet-mapping>
 </web-app>
